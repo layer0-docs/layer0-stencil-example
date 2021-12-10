@@ -27,6 +27,6 @@ jobs:
       - name: Stencil Example - Deploy to Layer0
         run: |
           npm ci
-          npm run build && npm run deploy -- ${{'--branch=$BRANCH_NAME' || ''}} --token=$deploy_token ${{env.BRANCH_NAME != 'master' && '--environment=staging' || ''}}
+          npm run build && npm run deploy -- ${{'--branch=$BRANCH_NAME' || ''}} --token=$deploy_token ${{env.BRANCH_NAME != 'main' && '--environment=staging' || ''}}
         env:
           deploy_token: ${{secrets.LAYER0_DEPLOY_TOKEN}}
